@@ -1,25 +1,28 @@
 #!/usr/bin/python3
 
+
 def list_division(my_list_1, my_list_2, list_length):
-    result = []
-    for i in range(list_length):
+    """
+    takes two lists and creates a new list with result of divison
+    operation
+
+    handles errors and prints them to stdout
+    """
+    i = 0
+    new_list = []
+    result = 0
+    for i in range(0, list_length):
         try:
-            val1 = my_list_1[i]
-            val2 = my_list_2[i]
-
-            if not (isinstance(val1, (int, float)) and isinstance(val2, (int, float))):
-                print("wrong type")
-                result.append(0)
-                continue
-
-            try:
-                div = val1 / val2
-            except ZeroDivisionError:
-                print("division by 0")
-                div = 0
-            result.append(div)
-
+            result = (my_list_1[i] / my_list_2[i])
+        except TypeError:
+            result = 0
+            print("wrong type")
+        except ZeroDivisionError:
+            result = 0
+            print("division by 0")
         except IndexError:
+            result = 0
             print("out of range")
-            result.append(0)
-    return result
+        finally:
+            new_list.append(result)
+    return new_list
