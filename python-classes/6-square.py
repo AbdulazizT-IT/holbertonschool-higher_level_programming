@@ -6,6 +6,20 @@ class Square:
     """Represents a square with size and position."""
 
     def __init__(self, size=0, position=(0, 0)):
+        """Creates a square of a given size
+
+        Size of the square is hidden
+
+        Args:
+            size (int): length of the sides
+            position (tuple): the position of the square
+
+        Raises:
+            TypeError: size is not an integer
+            ValueError: size is negative
+
+        """
+
         self.size = size
         self.position = position
 
@@ -22,6 +36,13 @@ class Square:
         self.__size = value
 
     def area(self):
+        """Returns the size of square
+
+        Returns:
+            size squared for area
+
+        """
+
         return self.__size ** 2
 
     @property
@@ -40,11 +61,19 @@ class Square:
         self.__position = value
 
     def my_print(self):
-        if self.__size == 0:
-            print()
+        """Prints out a grid of #'s representing the sqaure
+
+        prints a blank line if size is 0
+
+        also moves the sqaure to match position
+
+        """
+
+        if self.size == 0:
+            print("")
             return
 
-        for _ in range(0, self.__position[1]):
-            print()
-        for _ in range(0, self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+        for _ in range(self.position[1]):
+            print("")
+        for _ in range(self.size):
+            print(" " * self.position[0] + "#" * self.size)
