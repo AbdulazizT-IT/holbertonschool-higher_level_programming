@@ -11,12 +11,10 @@ class Square:
 
     @property
     def size(self):
-        """Getter for size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Setter for size with validation."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -25,12 +23,10 @@ class Square:
 
     @property
     def position(self):
-        """Getter for position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Setter for position with validation."""
         if (not isinstance(value, tuple) or
             len(value) != 2 or
             not all(isinstance(num, int) for num in value) or
@@ -39,19 +35,17 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Returns area of the square."""
         return self.__size ** 2
 
     def my_print(self):
-        """Prints the square with '#' considering position."""
         if self.__size == 0:
             print()
             return
 
-        # Vertical position: print empty lines
+        # طباعة الأسطر الفارغة للـ position[1]
         for _ in range(self.__position[1]):
             print()
 
-        # Print each line with horizontal spaces then hashes
+        # طباعة المربّع مع مسافات جانبية حسب position[0]
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
