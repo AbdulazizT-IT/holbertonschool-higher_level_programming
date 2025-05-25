@@ -48,7 +48,8 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) * self.__width for _ in range(self.__height)])
+        return "\n".join([str(self.print_symbol) * self.__width
+        for _ in range(self.__height)])
 
     def __del__(self):
         print("Bye rectangle...")
