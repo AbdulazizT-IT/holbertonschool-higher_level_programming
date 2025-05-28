@@ -10,7 +10,7 @@ def inherits_from(obj, a_class):
     """
     Returns True or False.
     """
-    if type(obj) is not a_class:
-        return True
-    else:
+    if type(obj) is a_class:
         return False
+    else:
+        return True
