@@ -7,16 +7,16 @@
 import json
 
 
-def to_json_string(my_obj):
+def from_json_string(my_str):
 
     """
     Returns the JSON string representation of a Python object.
 
     Args:
-        my_obj: The Python object to convert (e.g. dict, list, etc.)
+        my_str: The Python object to convert (e.g. dict, list, etc.)
 
     Returns:
-        str: The JSON string representation of the object.
+        obj: The JSON string representation of the object.
     """
 
-    return json.loads(my_obj)
+    return json.loads(my_str)
