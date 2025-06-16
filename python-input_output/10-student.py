@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-Defines a Student class with first_name, last_name, age,
-and provides a method to retrieve its dictionary representation
+Defines a Student class
+with first_name, last_name, age,
+and provides a method to
+retrieve its dictionary representation
 with optional attribute filtering.
 """
 
