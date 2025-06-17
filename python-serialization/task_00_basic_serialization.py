@@ -22,5 +22,5 @@ def load_and_deserialize(filename):
     with open(filename, 'r', encoding='UTF=8') as f:
 
         data_text = f.read()
-        y = json.loads(filename)
+        y = json.loads(data_text)
         return y
