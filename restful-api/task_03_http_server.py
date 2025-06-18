@@ -21,7 +21,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             status = {"status": "OK"}
-            self.wfile.write(json.dumps(status).encode())
+            self.wfile.write(json.dumps(status, separators=(",", ":")).encode())
 
         else:
             self.send_response(404)
