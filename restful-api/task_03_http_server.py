@@ -1,5 +1,8 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
+import socketserver
+
+PORT = 8000
 
 class SimpleAPIHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -14,14 +17,13 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             data = {"name": "John", "age": 30, "city": "New York"}
-            self.wfile.write(json.dumps(data).encode())
+            self.wfile.write(json.dumps(data).encode('utf-8'))
 
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            status = {"status":"OK"}
-            self.wfile.write(json.dumps(status).encode())
+            self.wfile.write(b"OK")
 
         else:
             self.send_response(404)
