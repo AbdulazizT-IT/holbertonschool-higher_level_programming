@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE NAME LIKE 'H%' ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name LIKE 'H%' ORDER BY id ASC"
     cur.execute(query)
     states = cur.fetchall()
 
