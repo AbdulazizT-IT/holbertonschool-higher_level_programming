@@ -18,8 +18,9 @@ if __name__ == "__main__":
     in the given database, ordered by the `id` in ascending order.
     """
 
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
-                        db=sys.argv[3], port=3306)
+    db = MySQLdb.connect(
+        user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306
+    )
 
     cursor = db.cursor()
 
