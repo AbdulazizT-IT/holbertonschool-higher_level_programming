@@ -6,8 +6,10 @@ This script connects to a MySQL database, retrieves all the states
 from the `states` table, and displays them in ascending order by `id`.
 """
 
+
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     """
@@ -15,7 +17,10 @@ if __name__ == "__main__":
     and database name) and lists all states from the `states` table
     in the given database, ordered by the `id` in ascending order.
     """
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+
+    db = MySQLdb.connect(
+        user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306
+    )
 
     cur = db.cursor()
 
