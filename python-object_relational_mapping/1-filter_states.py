@@ -7,11 +7,11 @@ from the `states` table, and displays them in ascending order by `id`.
 """
 
 
-import MySQLdb
 import sys
+import MySQLdb
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     """
     This script takes 3 arguments (mysql username, mysql password,
     and database name) and lists all states from the `states` table
@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%'"
     cur.execute(query)
     states = cur.fetchall()
 
