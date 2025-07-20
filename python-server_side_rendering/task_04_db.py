@@ -55,6 +55,8 @@ def products():
         product_list = read_csv_file()
     elif source == "sql":
         product_list = read_sqlite_file(id_param)
+        if not product_list:  # <= هذا الشرط يكتشف أن ID غير موجود
+            return render_template("product_display.html", error="Product not found", products=None)
 
     # في حال وجود خطأ من قاعدة البيانات
     if isinstance(product_list, dict) and "error" in product_list:
